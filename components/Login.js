@@ -16,11 +16,11 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div>
-      <FormControl id="email" isRequired>
+      <FormControl id="login-email" isRequired>
         <FormLabel>Email address</FormLabel>
         <Input type="email" />
       </FormControl>
-      <FormControl id="password" isRequired>
+      <FormControl id="login-password" isRequired>
         <FormLabel>Password</FormLabel>
         <InputGroup>
           <Input type={showPassword ? "text" : "password"} />

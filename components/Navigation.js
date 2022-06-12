@@ -139,14 +139,13 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: "Shop",
+    href: "/shop",
   },
   {
     label: "About us",
+    href: "/about",
   },
-  {
-    label: "Sign in",
-    href: "#",
-  },
+
   {
     label: "Terms and Conditions",
     href: "#",

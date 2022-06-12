@@ -1,4 +1,5 @@
 import { Button, Flex, Image, Stack, chakra } from "@chakra-ui/react";
+import Link from "next/Link";
 
 export default function HeroSection() {
   return (
@@ -19,17 +20,19 @@ export default function HeroSection() {
             align={"center"}
             justify={"center"}
           >
-            <Button
-              rounded={"full"}
-              bg={"#FB574C"}
-              color={"white"}
-              _hover={{
-                bg: "#FB574C",
-              }}
-              width={"200px"}
-            >
-              Explore
-            </Button>
+            <Link href="shop">
+              <Button
+                rounded={"full"}
+                bg={"#FB574C"}
+                color={"white"}
+                _hover={{
+                  bg: "#FB574C",
+                }}
+                width={"200px"}
+              >
+                Explore
+              </Button>
+            </Link>
           </Stack>
         </Stack>
       </Flex>

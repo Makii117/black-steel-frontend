@@ -19,7 +19,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 
 const NavLink = ({ children }) => (
   <Link
@@ -52,11 +52,10 @@ export default function Topbar() {
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={1}>
               <Button>
-                <Link href="/login">Login</Link>
+                <Link href="/login">Register / Login</Link>
               </Button>
               <Button>
-                {" "}
-                <Link href="/login">Register</Link>
+                <Box as={AiOutlineHeart} size="24px" />
               </Button>
               <Button>
                 <Box as={AiOutlineShoppingCart} size="24px" />

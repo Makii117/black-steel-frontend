@@ -16,6 +16,22 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const register = async () => {
+    try {
+      const res = await fetch("https://besirevic.dev/auth/", {
+        header: "Access-Control-Allow-Origin: *",
+        method: "POST",
+        body: formData,
+      });
+
+      const json = await res.json();
+
+      return json;
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <Stack spacing={8} py={12} px={6}>
       <Stack spacing={4}>
@@ -68,6 +84,7 @@ const Register = () => {
               bg: "#FB574C",
             }}
             width={"200px"}
+            onClick={() => register()}
           >
             Register
           </Button>
