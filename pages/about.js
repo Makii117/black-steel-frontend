@@ -38,7 +38,7 @@ const about = () => {
         </Text>
         <Divider />
         <Box align={"center"}>
-          <Image src="/about.png" width={"1500vw"} alt="Loading" />
+          <Image src="/about.png" width={1000} height={300} alt="Loading" />
         </Box>
         <Divider />
         <Heading size={"lg"}>Our story</Heading>
