@@ -3,26 +3,17 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
   Link,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
   Input,
   useMediaQuery,
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-} from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 
 import Logo from "../assets/icons/Logo";
 
@@ -44,10 +35,18 @@ export default function Navigation() {
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
       >
-        <Flex
-          flex={{ base: 1, md: "auto" }}
-          display={{ base: "flex", md: "none" }}
-        >
+        <Flex flex={{ base: 1 }} justify={{ base: "left" }}>
+          <Text
+            textAlign={useBreakpointValue({ base: "center", md: "left" })}
+            fontFamily={"heading"}
+            color={useColorModeValue("gray.800", "white")}
+          >
+            <Logo />
+          </Text>
+        </Flex>
+        <Flex display={{ base: "flex" }}>
+          {isMobile ? <Input variant="flushed" placeholder="Search.." /> : null}
+
           <IconButton
             onClick={onToggle}
             icon={
@@ -57,19 +56,6 @@ export default function Navigation() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            <Logo />
-          </Text>
-        </Flex>
-
-        <Stack flex={{ base: 1, md: 0 }} justify={"flex-end"} spacing={2}>
-          {isMobile ? <Input placeholder="small size" size="sm" /> : null}
-        </Stack>
       </Flex>
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
@@ -83,7 +69,9 @@ const MobileNav = () => {
     <Stack
       bg={useColorModeValue("white", "gray.800")}
       p={4}
-      display={{ md: "none" }}
+      borderBottomWidth={1}
+      borderStyle={"solid"}
+      borderColor={useColorModeValue("#D2D2D2", "#D2D2D2")}
     >
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
@@ -101,8 +89,8 @@ const MobileNavItem = ({ label, children, href }) => {
         py={2}
         as={Link}
         href={href ?? "#"}
-        justify={"space-between"}
-        align={"center"}
+        justify={"right"}
+        align={"right"}
         _hover={{
           textDecoration: "none",
         }}
