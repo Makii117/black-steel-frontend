@@ -148,6 +148,6 @@ const NAV_ITEMS = [
 
   {
     label: "Terms and Conditions",
-    href: "#",
+    href: "/terms",
   },
 ];
