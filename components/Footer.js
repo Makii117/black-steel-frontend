@@ -64,8 +64,8 @@ export default function Footer() {
           padding="5px"
         >
           <Link href={"#"}>SOCIALS</Link>
-          <Link href={"#"}>TERMS OF USE</Link>
-          <Link href={"#"}>ABOUT US</Link>
+          <Link href={"/terms"}>TERMS OF USE</Link>
+          <Link href={"/about"}>ABOUT US</Link>
         </Stack>
       </Container>
 

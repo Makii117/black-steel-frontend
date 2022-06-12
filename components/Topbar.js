@@ -3,19 +3,12 @@ import { Image } from "next/image";
 import {
   Box,
   Flex,
-  Avatar,
   Link,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
   useColorMode,
-  Center,
   Text,
 } from "@chakra-ui/react";
 
@@ -58,7 +51,9 @@ export default function Topbar() {
                 <Box as={AiOutlineHeart} size="24px" />
               </Button>
               <Button>
-                <Box as={AiOutlineShoppingCart} size="24px" />
+                <Link href="/cart">
+                  <Box as={AiOutlineShoppingCart} size="24px" />
+                </Link>
               </Button>
             </Stack>
           </Flex>
