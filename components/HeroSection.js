@@ -1,5 +1,5 @@
 import { Button, Flex, Image, Stack, chakra } from "@chakra-ui/react";
-import Link from "next/Link";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (

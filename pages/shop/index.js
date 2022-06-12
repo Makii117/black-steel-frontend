@@ -10,7 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import ProductCard from "../../components/ProductCard";
-import Link from "next/Link";
+import Link from "next/link";
 import { FiFilter } from "react-icons/fi";
 
 const shop = (props) => {

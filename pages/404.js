@@ -1,5 +1,5 @@
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
-import Link from "next/Link";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
