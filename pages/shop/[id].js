@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Box,
-  chakra,
   Container,
   Stack,
   Text,
@@ -13,12 +12,10 @@ import {
   SimpleGrid,
   StackDivider,
   useColorModeValue,
-  VisuallyHidden,
   List,
   ListItem,
-  Slider,
 } from "@chakra-ui/react";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import Slider from "../../components/Slider";
 import { MdLocalShipping } from "react-icons/md";
 
 const ProductDetails = ({ post }) => {
@@ -170,6 +167,15 @@ const ProductDetails = ({ post }) => {
           </Stack>
         </Stack>
       </SimpleGrid>
+      <Heading
+        lineHeight={1.1}
+        fontWeight={400}
+        fontSize={{ base: "2xl", sm: "4xl", lg: "4xl" }}
+        align={"center"}
+      >
+        Recommended
+      </Heading>
+      <Slider />
     </Container>
   );
 };

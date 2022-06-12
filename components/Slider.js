@@ -48,19 +48,7 @@ const Slider = () => {
         align={"center"}
         justify={"center"}
         marginBottom="4rem"
-      >
-        <Button
-          rounded={"full"}
-          bg={"#FB574C"}
-          color={"white"}
-          _hover={{
-            bg: "#FB574C",
-          }}
-          width={"185px"}
-        >
-          <b>Shop now</b>
-        </Button>
-      </Stack>
+      ></Stack>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { Divider } from "@chakra-ui/react";
+import { Divider, Button, Box } from "@chakra-ui/react";
 
 // components
 import HeroSection from "../components/HeroSection";
@@ -19,6 +19,21 @@ export default function Home() {
       </Head>
       <HeroSection />
       <Slider />
+      <Box align={"center"} paddingBottom={"4rem"}>
+        <Button
+          rounded={"full"}
+          bg={"#FB574C"}
+          color={"white"}
+          _hover={{
+            bg: "#FB574C",
+          }}
+          width={"185px"}
+        >
+          <a href="/shop">
+            <b>Shop now</b>
+          </a>
+        </Button>
+      </Box>
       <Divider />
       <Brands />
       <InfoSection />

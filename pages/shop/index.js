@@ -6,10 +6,11 @@ import {
   BreadcrumbLink,
   Box,
   Stack,
+  Container,
   Text,
 } from "@chakra-ui/react";
 import ProductCard from "../../components/ProductCard";
-
+import Link from "next/Link";
 import { FiFilter } from "react-icons/fi";
 
 const shop = (props) => {
@@ -46,13 +47,19 @@ const shop = (props) => {
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
         {products.map((product) => {
           return (
-            <div key={product.name}>
-              <ProductCard
-                name={product.name}
-                img={product.img}
-                price={product.price}
-              />
-            </div>
+            <Link
+              key={product.id}
+              href={`/shop/[id]`}
+              as={`/shop/${product.id}`}
+            >
+              <Container key={product.id} style={{ cursor: "pointer" }}>
+                <ProductCard
+                  name={product.name}
+                  img={product.img}
+                  price={product.price}
+                />
+              </Container>
+            </Link>
           );
         })}
       </SimpleGrid>
