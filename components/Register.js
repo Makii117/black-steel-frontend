@@ -15,20 +15,27 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [inputs, setInputs] = useState({});
 
-  const register = async () => {
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    alert(inputs);
+    console.log(inputs);
+
     try {
-      const res = await fetch("https://besirevic.dev/auth/", {
-        header: "Access-Control-Allow-Origin: *",
+      const res = fetch("https://besirevic.dev/auth/", {
         method: "POST",
-        body: formData,
+        body: inputs,
       });
 
-      const json = await res.json();
-
-      return json;
-    } catch (e) {
-      console.log(e);
+      return res;
+    } catch (err) {
+      console.log("Error: ", err.message);
     }
   };
 
@@ -37,26 +44,46 @@ const Register = () => {
       <Stack spacing={4}>
         <HStack>
           <Box>
-            <FormControl id="firstName" isRequired>
+            <FormControl id="name" isRequired>
               <FormLabel>First Name</FormLabel>
-              <Input type="text" />
+              <Input
+                type="text"
+                name="name"
+                value={inputs.name || ""}
+                onChange={handleChange}
+              />
             </FormControl>
           </Box>
           <Box>
-            <FormControl id="lastName">
+            <FormControl id="surname">
               <FormLabel>Last Name</FormLabel>
-              <Input type="text" />
+              <Input
+                name="surname"
+                type="text"
+                value={inputs.surname || ""}
+                onChange={handleChange}
+              />
             </FormControl>
           </Box>
         </HStack>
         <FormControl id="email" isRequired>
           <FormLabel>Email address</FormLabel>
-          <Input type="email" />
+          <Input
+            type="email"
+            name="email"
+            value={inputs.email || ""}
+            onChange={handleChange}
+          />
         </FormControl>
         <FormControl id="password" isRequired>
           <FormLabel>Password</FormLabel>
           <InputGroup>
-            <Input type={showPassword ? "text" : "password"} />
+            <Input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={inputs.password || ""}
+              onChange={handleChange}
+            />
             <InputRightElement h={"full"}>
               <Button
                 variant={"ghost"}
@@ -84,7 +111,7 @@ const Register = () => {
               bg: "#FB574C",
             }}
             width={"200px"}
-            onClick={() => register()}
+            onClick={() => handleSubmit()}
           >
             Register
           </Button>

@@ -46,6 +46,8 @@ const cart = () => {
                 </Text>
               </Stack>
             </Stack>
+            <Divider />
+
             <Stack direction={"reverse-column"}>
               <CardItem />
               <Stack
