@@ -63,15 +63,9 @@ export default function Footer() {
           borderColor={useColorModeValue("#D2D2D2", "#D2D2D2")}
           padding="5px"
         >
-          <Link href={"#"}>
-            <b>SOCIALS</b>
-          </Link>
-          <Link href={"#"}>
-            <b>TERMS OF USE</b>
-          </Link>
-          <Link href={"#"}>
-            <b>ABOUT US</b>
-          </Link>
+          <Link href={"#"}>SOCIALS</Link>
+          <Link href={"#"}>TERMS OF USE</Link>
+          <Link href={"#"}>ABOUT US</Link>
         </Stack>
       </Container>
 

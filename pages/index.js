@@ -5,6 +5,9 @@ import { Divider } from "@chakra-ui/react";
 // components
 import HeroSection from "../components/HeroSection";
 import Slider from "../components/Slider";
+import Brands from "../components/Brands";
+import InfoSection from "../components/InfoSection";
+import Newsletter from "../components/Newsletter";
 
 export default function Home() {
   return (
@@ -15,9 +18,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeroSection />
+      <Slider />
+      <Divider />
+      <Brands />
+      <InfoSection />
       <Divider />
 
-      <Slider />
+      <Newsletter />
     </div>
   );
 }
