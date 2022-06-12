@@ -41,7 +41,10 @@ export default function Navigation() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            <Logo />
+            <Link href="/">
+              {" "}
+              <Logo />
+            </Link>
           </Text>
         </Flex>
         <Flex display={{ base: "flex" }}>

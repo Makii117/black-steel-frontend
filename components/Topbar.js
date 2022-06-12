@@ -51,8 +51,13 @@ export default function Topbar() {
 
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={1}>
-              <Button>Login</Button>
-              <Button>Register</Button>
+              <Button>
+                <Link href="/login">Login</Link>
+              </Button>
+              <Button>
+                {" "}
+                <Link href="/login">Register</Link>
+              </Button>
               <Button>
                 <Box as={AiOutlineShoppingCart} size="24px" />
               </Button>
