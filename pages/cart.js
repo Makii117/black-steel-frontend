@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import CardItem from "../components/CardItem";
 import { TiDeleteOutline } from "react-icons/ti";
+import Link from "next/link";
 
 const cart = () => {
   return (
@@ -75,9 +76,9 @@ const cart = () => {
               }}
               width={"185px"}
             >
-              <a href="/shop">
+              <Link href="/shop">
                 <b>Checkout</b>
-              </a>
+              </Link>
             </Button>
 
             <Text>

@@ -8,6 +8,7 @@ import Slider from "../components/Slider";
 import Brands from "../components/Brands";
 import InfoSection from "../components/InfoSection";
 import Newsletter from "../components/Newsletter";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -29,9 +30,9 @@ export default function Home() {
           }}
           width={"185px"}
         >
-          <a href="/shop">
+          <Link href="/shop">
             <b>Shop now</b>
-          </a>
+          </Link>
         </Button>
       </Box>
       <Divider />

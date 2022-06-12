@@ -37,7 +37,7 @@ export default function BasicStatistics() {
           {BRANDS.map((brand) => {
             return (
               <div key={brand.id}>
-                <img src={brand.url} />
+                <Image src={brand.url} alt="Loading" />
               </div>
             );
           })}

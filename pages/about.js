@@ -7,6 +7,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Image from "next/Image";
 
 const about = () => {
   return (
@@ -37,7 +38,7 @@ const about = () => {
         </Text>
         <Divider />
         <Box align={"center"}>
-          <img src="/about.png" width={"1500vw"} alt="Loading" />
+          <Image src="/about.png" width={"1500vw"} alt="Loading" />
         </Box>
         <Divider />
         <Heading size={"lg"}>Our story</Heading>
