@@ -24,18 +24,28 @@ const Register = () => {
   };
 
   const handleSubmit = (event) => {
-    alert(inputs);
-    console.log(inputs);
+    const inputJson=JSON.stringify(inputs)
+
 
     try {
       const res = fetch("https://besirevic.dev/auth/", {
         method: "POST",
-        body: inputs,
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer',
+        },
+        credentials: 'include',
+
+        body: inputJson,
       });
 
       return res;
+      const token = res.accessToken
     } catch (err) {
+      
       console.log("Error: ", err.message);
+    
     }
   };
 

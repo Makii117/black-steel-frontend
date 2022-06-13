@@ -9,10 +9,12 @@ import {
   Stack,
   Button,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { useRouter } from "next/router";
 
 const Login = () => {
+  const router=useRouter();
   const [showPassword, setShowPassword] = useState(false);
 
   const [inputs, setInputs] = useState({});
@@ -24,18 +26,28 @@ const Login = () => {
   };
 
   const handleSubmit = (event) => {
-    alert(inputs);
-    console.log(inputs);
+    const inputJson=JSON.stringify(inputs)
 
     try {
       const res = fetch("https://besirevic.dev/auth/login", {
         method: "POST",
-        body: JSON.stringify(inputs),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer',
+        },
+        credentials: 'include',
+
+        body: inputJson,
       });
 
-      console.log(res);
+      console.log(res); 
+      const token = res.accessToken
+      console.log(token)
     } catch (err) {
+      alert(err.message);
       console.log("Error: ", err.message);
+
     }
   };
 
