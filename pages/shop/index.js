@@ -43,7 +43,7 @@ const shop = (props) => {
           <Box as={FiFilter} size="24px" />
         </Box>
       </Stack>
-
+      {/*Products map*/}
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
         {products.map((product) => {
           return (

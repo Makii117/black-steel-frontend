@@ -29,7 +29,7 @@ const Login = () => {
     const inputJson=JSON.stringify(inputs)
 
     try {
-      const res = fetch("https://besirevic.dev/auth/login", {
+      const res = fetch("http://localhost:5000/auth/login", {
         method: "POST",
         headers: {
           'Accept': 'application/json',
