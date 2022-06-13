@@ -15,6 +15,7 @@ import { FiFilter } from "react-icons/fi";
 const shop = (props) => {
   const { products } = props;
 
+  console.log(products);
   return (
     <div>
       <Stack
