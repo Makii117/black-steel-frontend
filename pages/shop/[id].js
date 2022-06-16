@@ -167,15 +167,6 @@ const ProductDetails = ({ post }) => {
           </Stack>
         </Stack>
       </SimpleGrid>
-      <Heading
-        lineHeight={1.1}
-        fontWeight={400}
-        fontSize={{ base: "2xl", sm: "4xl", lg: "4xl" }}
-        align={"center"}
-      >
-        Recommended
-      </Heading>
-      <Slider />
     </Container>
   );
 };

@@ -10,7 +10,9 @@ import InfoSection from "../components/InfoSection";
 import Newsletter from "../components/Newsletter";
 import Link from "next/link";
 
-export default function Home() {
+export default function Home(props) {
+  const { products } = props;
+
   return (
     <div>
       <Head>
@@ -19,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeroSection />
-      <Slider />
+      <Slider items={products} />
       <Box align={"center"} paddingBottom={"4rem"}>
         <Button
           rounded={"full"}
@@ -43,4 +45,15 @@ export default function Home() {
       <Newsletter />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("https://besirevic.dev/api/products");
+  const products = await res.json();
+
+  return {
+    props: {
+      products,
+    },
+  };
 }

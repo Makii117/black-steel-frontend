@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-const Slider = () => {
+const Slider = ({ items }) => {
   return (
     <div>
       <Swiper
@@ -21,27 +21,13 @@ const Slider = () => {
         slidesPerView={3}
         navigation
       >
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
+        {items.slice(2, 8).map((item) => {
+          return (
+            <SwiperSlide key={item.id}>
+              <Card name={item.name} price={item.price} img={item.img} />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
       <Stack
         direction={{ base: "row", md: "row" }}

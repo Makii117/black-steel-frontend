@@ -14,14 +14,9 @@ import { FiShoppingCart } from "react-icons/fi";
 
 const data = {
   isNew: true,
-  imageURL:
-    "http://cdn.shopify.com/s/files/1/0237/1197/products/9318-01_grande.jpg?v=1626151857",
-  name: "Knife",
-  price: 4.5,
-  numReviews: 34,
 };
 
-function ProductAddToCart() {
+function ProductAddToCart({ name, price, img }) {
   return (
     <Flex p={50} w="full" alignItems="center" justifyContent="center">
       <Box
@@ -42,11 +37,7 @@ function ProductAddToCart() {
           />
         )}
 
-        <Image
-          src={data.imageURL}
-          alt={`Picture of ${data.name}`}
-          roundedTop="lg"
-        />
+        <Image src={img} alt={`Picture of ${data.name}`} roundedTop="lg" />
 
         <Box p="6">
           <Box d="flex" alignItems="baseline">
@@ -62,9 +53,8 @@ function ProductAddToCart() {
               fontWeight="semibold"
               as="h4"
               lineHeight="tight"
-              isTruncated
             >
-              {data.name}
+              {name}
             </Box>
             <Tooltip
               label="Add to cart"
@@ -84,7 +74,7 @@ function ProductAddToCart() {
               <Box as="span" color={"gray.600"} fontSize="lg">
                 £
               </Box>
-              {data.price.toFixed(2)}
+              {price}
             </Box>
           </Flex>
         </Box>
