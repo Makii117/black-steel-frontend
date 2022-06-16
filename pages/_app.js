@@ -1,3 +1,6 @@
+import { Provider } from "react-redux";
+import store from "../app/store";
+
 import {
   ChakraProvider,
   ColorModeProvider,
@@ -17,7 +20,9 @@ const MyApp = ({ Component, pageProps }) => {
         }}
       >
         <Layout>
-          <Component {...pageProps} />
+          <Provider store={store}>
+            <Component {...pageProps} />
+          </Provider>
         </Layout>
       </ColorModeProvider>
     </ChakraProvider>
